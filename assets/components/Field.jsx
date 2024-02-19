@@ -1,0 +1,24 @@
+import React from 'react';
+const Field = ({name, label, value, onChange, placeholder="", type="text", error= ""}) => {
+    return ( 
+        <>
+            <div className="my-3">
+                <label htmlFor={name}>{label}</label>
+                <input 
+                    type={value} 
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder || label}
+                    name={name}
+                    id={name}
+                    className={"form-control"+ (error && "is-invalid")}
+                />
+                {error && (
+                    <p className="invalid-feedback">{error}</p>
+                )}
+            </div>
+        </>
+     );
+}
+ 
+export default Field;
